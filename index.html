@@ -138,7 +138,7 @@ html.dk #sh #sb button{color:#f1f2ff}html.dk #sh #sb button.on{color:#22203d}
   <div class="rd"><img id="rth"><div><b id="rnm"></b><br><small id="rmt" style="color:#6b6a8a"></small></div></div>
   <div style="color:#6b6a8a;margin-bottom:4px">Words per line</div><div class="chips" id="ch"></div>
   <small style="color:#6b6a8a">Shorter lines stay tighter in sync; longer lines show more at once.</small>
-  <div id="ukb" style="margin-top:16px;border:1px solid #ece9fa;border-radius:16px;padding:12px 14px"><div style="font-weight:700;margin-bottom:8px">🔑 Google AI key <small style="font-weight:400">(Gemini · free · one time)</small></div><div class="key"><input id="uk" type="password" autocomplete="off"><button id="uke" type="button" title="Show / hide">👁</button></div><small style="color:#6b6a8a"><a href="https://aistudio.google.com/apikey" target="_blank" style="color:#7c3aed">Get a free key ↗</a> · 🔒 Not saved: kept only until you close or refresh this page.</small><div id="ukm" style="min-height:18px;font-size:13px;margin-top:4px"></div></div>
+  <div id="ukb" style="margin-top:16px;border:1px solid #ece9fa;border-radius:16px;padding:12px 14px"><div style="font-weight:700;margin-bottom:8px">🔑 Google AI key <small style="font-weight:400">(Gemini · free · one time)</small></div><div class="key"><input id="uk" type="password" autocomplete="off"><button id="uke" type="button" title="Show / hide">👁</button></div><small style="color:#6b6a8a"><a href="https://aistudio.google.com/apikey" target="_blank" style="color:#7c3aed">Get a free key ↗</a> · 🔒 Saved in this browser only. Edit or delete it any time under 🔑 Keys.</small><div id="ukm" style="min-height:18px;font-size:13px;margin-top:4px"></div></div>
   <div class="acts"><button data-g="home">← Back to Home</button><button class="y" id="gb">✨ Generate captions</button></div>
   <button id="cf" style="width:100%;margin-top:12px">Choose a different file</button></div>
  <input type="file" id="sf" accept="video/*" hidden></div></section>
@@ -147,7 +147,7 @@ html.dk #sh #sb button{color:#f1f2ff}html.dk #sh #sb button.on{color:#22203d}
  <div class="card" style="max-width:640px"><div class="kg"><span class="kt"><img data-i></span><span class="kl"></span><span class="kp">AIza••••</span><span class="kl"></span><span class="kt" style="color:#7c3aed;font-size:26px">✦</span></div>
   <div class="ct" style="margin:6px 0 16px"><b>Add your Google AI key</b><div id="kst" style="margin-top:8px"></div></div>
   <div class="key"><input id="kv" type="password" placeholder="Paste your Google AI key"><button id="ke" title="Show / hide">👁</button><button class="y" id="kc" style="opacity:.5">Connect</button></div>
-  <div id="kmsg" style="min-height:20px;margin:6px 2px;font-size:13px"></div><small style="color:#6b6a8a">🔒 Not saved: kept only until you close or refresh this page.</small>
+  <div id="kmsg" style="min-height:20px;margin:6px 2px;font-size:13px"></div><small style="color:#6b6a8a">🔒 Saved in this browser only. Edit or delete it any time under 🔑 Keys.</small>
   <hr style="border:0;border-top:1px solid #ece9fa;margin:16px 0"><b>No key yet? It's free, and takes about a minute</b>
   <div class="ks3"><div><b>1</b>Open Google AI Studio and sign in</div><div><b>2</b>Click "Create API key", then Copy</div><div><b>3</b>Paste it above and press Connect</div></div>
   <div class="row2"><a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank"><button>📖 Guide</button></a><a href="https://aistudio.google.com/apikey" target="_blank"><button class="y">Open AI Studio ↗</button></a></div>
@@ -183,8 +183,8 @@ html.dk #sh #sb button{color:#f1f2ff}html.dk #sh #sb button.on{color:#22203d}
   <div class="tab" id="t-ai" hidden>
    <div class="p"><h3>✨ AI Sinhala subtitles</h3>
     <label class="f"><span>Engine</span><select id="eng"><option value="gem">✨ Google Gemini (free key)</option><option value="oai">🎯 OpenAI Whisper API</option><option value="loc">💻 Whisper in browser (offline)</option></select></label>
-    <label class="f" id="kr"><span>API key</span><input type="password" id="key" placeholder="key eka paste karanna"></label>
-    <div class="row" id="ktr" style="margin:4px 0 6px;align-items:center;gap:8px"><button type="button" id="kt">🔑 Key eka test karanna</button><small id="ktm"></small></div>
+    <label class="f" id="kr"><span>API key</span><input type="password" id="key" placeholder="Paste your API key"></label>
+    <div class="row" id="ktr" style="margin:4px 0 6px;align-items:center;gap:8px"><button type="button" id="kt">🔑 Test key</button><small id="ktm"></small></div>
     <label class="f"><span>Model</span><input type="text" id="mdl" list="ml"><datalist id="ml"><option>gemini-flash-latest</option><option>gemini-pro-latest</option><option>gemini-2.5-flash</option><option>gemini-2.5-pro</option><option>gemini-2.5-flash-lite</option></datalist></label>
     <small id="ei"></small>
     <div class="row" style="margin-top:8px"><label><input type="checkbox" id="rep" checked> Kalin subs replace karanna</label><label><input type="checkbox" id="wr" checked> Lines 2k karanna</label></div>
@@ -194,9 +194,9 @@ html.dk #sh #sb button{color:#f1f2ff}html.dk #sh #sb button.on{color:#22203d}
     <div class="row"><button onclick="addSub()">➕ Add</button><button onclick="srt.click()">SRT import</button><button id="srtx">SRT export</button></div><input type="file" id="srt" accept=".srt" hidden></div></div>
   <div class="tab" id="t-style" hidden><div class="p"><h3>Video size</h3><div id="ga"></div></div><div class="p"><h3>Subtitle style</h3><div id="gs"></div></div><div class="p"><h3>Own font</h3><button onclick="fu.click()">📤 Font file upload (.ttf / .otf)</button><div id="myf"></div><small id="fmsg"></small><input type="file" id="fu" accept=".ttf,.otf,.woff,.woff2" multiple hidden></div></div>
   <div class="tab" id="t-kw" hidden><div class="p"><h3>✨ Keyword → overlay + sound</h3>
- <small>Keyword ekak kiyana thana walata (subtitles walin hoyala) overlay + sound auto danawa.</small>
+ <small>Detects keywords in your subtitles and adds an overlay and a sound effect at that moment.</small>
  <div id="kwl" style="margin-top:8px"></div>
- <div class="row"><button class="g1" onclick="addKW()">➕ Keyword rule</button><button class="g3" onclick="applyKW()">⚡ Apply to video</button></div>
+ <div class="row"><button class="g1" onclick="addKW()">➕ Add rule</button><button class="g3" onclick="applyKW()">⚡ Apply to video</button></div>
  <label class="f"><span>Pexels key</span><input type="password" id="pk" placeholder="photos walata (free)"></label>
  <small>Free key: pexels.com/api — photo search term English walin danna.</small></div>
  <div class="p"><h3>🔊 Sound effects</h3><small id="sfl"></small><div class="row" style="margin-top:6px"><button onclick="sfu.click()">📤 Upload sounds</button><button onclick="playSfx($('#sfp').value)">▶ Test</button><select id="sfp"></select></div><input type="file" id="sfu" accept="audio/*" multiple hidden></div></div>
@@ -236,7 +236,7 @@ function FR(o,sp){return sp.map(([lb,k,ty,a,b,c])=>{const v=o[k];let h;
  return `<label class="f"><span>${lb}</span>${h}</label>`}).join('')}
 function bind(el,o,after){el.oninput=e=>{const t=e.target,k=t.dataset.k;if(!k)return;o[k]=(t.type=='range'||t.type=='number')?+t.value:t.value;if(t.type=='range')t.nextSibling.textContent=(+t.value).toFixed(2);lay();TL();after&&after()};el.onchange=e=>{if(e.target.dataset.k)commit()}}
 function insp(){const el=$('#in'),it=sel&&D[sel.k][sel.i];if(!it){el.innerHTML='<small>Timeline eke block ekak select karanna.</small>';return}
- const key=sel.k=='ovs'?'ovs_'+it.type:sel.k;el.innerHTML=(sel.k=='clips'?`<small>${esc(it.name)}</small>`:'')+FR(sel.k=='subs'?{font:D.S.font,size:D.S.size,color:D.S.color,hc:D.S.hc,anim:D.S.anim,...it}:it,FS[key])+(sel.k=='subs'?'<button id="rst" style="width:100%;margin-top:6px">↺ Default style ekata</button>':'');bind(el,it);const rb=$('#rst');if(rb)rb.onclick=()=>{['font','size','color','hc','anim'].forEach(k=>delete it[k]);insp();commit()}}
+ const key=sel.k=='ovs'?'ovs_'+it.type:sel.k;el.innerHTML=(sel.k=='clips'?`<small>${esc(it.name)}</small>`:'')+FR(sel.k=='subs'?{font:D.S.font,size:D.S.size,color:D.S.color,hc:D.S.hc,anim:D.S.anim,...it}:it,FS[key])+(sel.k=='subs'?'<button id="rst" style="width:100%;margin-top:6px">↺ Reset to default style</button>':'');bind(el,it);const rb=$('#rst');if(rb)rb.onclick=()=>{['font','size','color','hc','anim'].forEach(k=>delete it[k]);insp();commit()}}
 function gs(){$('#ga').innerHTML=FR(D,[['Aspect','ar','s',['Auto','16:9','9:16','1:1','4:5']]]);bind($('#ga'),D,sizeC);$('#gs').innerHTML=FR(D.S,FG);bind($('#gs'),D.S)}
 // ---------- timeline
 function TL(){const n=Math.ceil(tot+10),st=PX<20?10:PX<60?5:1;let r='';for(let s=0;s<n;s+=st)r+=`<span style="position:absolute;left:${s*PX}px">${s}s</span>`;
@@ -348,7 +348,7 @@ $('#ex').onclick=()=>{if(!D.clips.length||!adst)return alert('Palamuwa video cli
  exporting=true;T=0;setActive();rec.start(1000);play();$('#ex').textContent='Exporting… (tab eka mathak thiyanna)'};
 
 // ---------- v3: AI subtitles + UI
-const MEMK={kg:'',ko:''};const LS={get:k=>{if(k in MEMK)return MEMK[k];try{return localStorage.getItem(k)||''}catch{return ''}},set:(k,v)=>{if(k in MEMK){MEMK[k]=v;return}try{localStorage.setItem(k,v)}catch{}}};try{localStorage.removeItem('kg');localStorage.removeItem('ko')}catch{}
+const MEMK={};const LS={get:k=>{if(k in MEMK)return MEMK[k];try{return localStorage.getItem(k)||''}catch{return ''}},set:(k,v)=>{if(k in MEMK){MEMK[k]=v;return}try{localStorage.setItem(k,v)}catch{}}};
 const KEY={gem:'kg',oai:'ko'};let abort=false;
 const ENG={gem:{m:'gemini-flash-latest',k:1,i:'Sinhala wala hondama accuracy. Free key: aistudio.google.com/apikey. Audio eka Google ta yanawa. Timestamps podi kiyak ayin wenna puluwan. Busy unama auto retry karala, wena model walatath maru wenawa.'},oai:{m:'whisper-1',k:1,i:'Timestamps hari hondai. OpenAI API key oni (paid, godak podi gana). Audio eka OpenAI ta yanawa.'},loc:{m:'whisper-small',k:0,i:'Free, audio eka PC eken eliyata yanne nehe. Palaweni parak model eka download wenawa (internet oni, whisper-base / whisper-small). Sinhala accuracy adui, edit karanna wenawa.'}};
 function eg(){const v=$('#eng').value,e=ENG[v];$('#mdl').value=e.m;$('#mdl').disabled=v=='oai';$('#kr').hidden=!e.k;$('#ktr').hidden=!e.k;$('#ktm').textContent='';$('#ei').textContent=e.i;$('#key').value=KEY[v]?LS.get(KEY[v]):''}
@@ -428,7 +428,7 @@ async function gen(){const eng=$('#eng').value,st=(m,p)=>{$('#ovt').textContent=
  let cues=[],bad=[],parts=[],fatal=null,lastErr=null;
  try{st('Audio extract karanawa…',5);const a=await tlAudio();
   if(eng=='loc')cues=await runLoc(a,st);
-  else{const key=$('#key').value.trim();if(!key)throw Error('API key eka dala');LS.set(KEY[eng],key);
+  else{const key=$('#key').value.trim();if(!key)throw Error('Enter your API key');LS.set(KEY[eng],key);
    st('Katha karana thana hoyanawa…',8);parts=chunkSp(vad(a),eng=='oai'?45:28);
    if(!parts.length)throw Error('Video eke katha karana thanak hoyaganna bari una (audio eka nathnam godak nihandai).');
    const doPart=async(i,again)=>{const P=parts[i],seg=a.slice(P.a*VF,P.b*VF),t0=P.a*VF/16000;
@@ -459,7 +459,7 @@ async function gKeyTest(eng,k){
   if(r.status==429)return{c:'#d97706',t:'⚠️ Key eka hari, hebei limit eka iwara. Tikak inna.'};
   return{c:'#d97706',t:'⚠️ Server eka busy ('+r.status+'). Key eka waradi nemei wage, poddak inna aye test karanna.'}}
  catch{return{c:'#d97706',t:'⚠️ Server ta reach wenna bari una. Internet eka balanna.'}}}
-$('#kt').onclick=async()=>{const k=$('#key').value.trim(),m=$('#ktm'),eng=$('#eng').value;if(!k){m.style.color='#dc2626';m.textContent='Palamuwa key eka paste karanna.';return}
+$('#kt').onclick=async()=>{const k=$('#key').value.trim(),m=$('#ktm'),eng=$('#eng').value;if(!k){m.style.color='#dc2626';m.textContent='Palamuwa Paste your API key.';return}
  m.style.color='#6b6a8a';m.textContent='Test karanawa…';const r=await gKeyTest(eng,k);m.style.color=r.c;m.textContent=r.t;if(r.c=='#059669')LS.set(KEY[eng],k)};
 sizeC();gs();TL();insp();SL();hist=[JSON.stringify(D)];loop();
 // ---------- v4: Motion Edits home / upload / key / progress / projects shell
@@ -523,14 +523,14 @@ function rkw(){D.kw=D.kw||[];D.kw.forEach(r=>{if(r.t=='emoji'){r.t='line';r.v='s
 <div class="f"><span>${r.t=='photo'?'Search (EN)':r.t=='line'?'Icon':'Value'}</span>${r.t=='line'?`<select data-i="${i}" data-k="v">${Object.keys(ICN).map(k=>`<option${r.v==k?' selected':''}>${k}</option>`).join('')}</select>`:`<input type="text" data-i="${i}" data-k="v" value="${esc(r.v)}">`}</div>
 <div class="f"><span>Animation</span><select data-i="${i}" data-k="an">${AN.map(a=>`<option${r.an==a?' selected':''}>${a}</option>`).join('')}</select></div>
 <div class="f"><span>Sound</span><select data-i="${i}" data-k="sn">${SFXL.map(a=>`<option${r.sn==a?' selected':''}>${esc(a)}</option>`).join('')}</select></div>
-<div class="f"><span>X / Y / Size</span><input type="number" data-i="${i}" data-k="x" value="${r.x??KT[r.t][2]}" style="width:58px"><input type="number" data-i="${i}" data-k="y" value="${r.y??KT[r.t][3]}" style="width:58px"><input type="number" data-i="${i}" data-k="sz" value="${r.sz??KT[r.t][1]}" style="width:58px"></div><div class="f"><span>Seconds</span><input type="number" step=".1" data-i="${i}" data-k="du" value="${r.du}"><button onclick="D.kw.splice(${i},1);rkw();commit()">🗑</button></div></div>`).join('')||'<small>Rules nehe. ➕ click karanna.</small>'}
+<div class="f"><span>X / Y / Size</span><input type="number" data-i="${i}" data-k="x" value="${r.x??KT[r.t][2]}" style="width:58px"><input type="number" data-i="${i}" data-k="y" value="${r.y??KT[r.t][3]}" style="width:58px"><input type="number" data-i="${i}" data-k="sz" value="${r.sz??KT[r.t][1]}" style="width:58px"></div><div class="f"><span>Seconds</span><input type="number" step=".1" data-i="${i}" data-k="du" value="${r.du}"><button onclick="D.kw.splice(${i},1);rkw();commit()">🗑</button></div></div>`).join('')||'<small>No rules yet. Use ➕ Add rule or 🤖 AI Auto-detect.</small>'}
 $('#kwl').oninput=e=>{const t=e.target,r=D.kw[t.dataset.i];if(r)r[t.dataset.k]=t.type=='number'?+t.value:t.value};
 $('#kwl').onchange=e=>{const t=e.target;if(t.dataset.k=='t'){const r=D.kw[t.dataset.i];r.v=KT[r.t][4];delete r.x;delete r.y;delete r.sz;rkw()}commit()};
 function addKW(){D.kw=D.kw||[];D.kw.push({w:'',t:'line',v:'home',an:'pop',sn:'pop',du:1.5});rkw();commit()}
 $('#pk').value=LS.get('kp');$('#pk').oninput=()=>LS.set('kp',$('#pk').value.trim());
 const PC={};
 async function pex(q){if(PC[q])return PC[q];const k=LS.get('kp');if(!k)throw Error('Pexels key eka dala (Keywords tab)');const j=await(await fetch('https://api.pexels.com/v1/search?per_page=1&query='+encodeURIComponent(q),{headers:{Authorization:k}})).json();const u=j.photos&&j.photos[0]&&j.photos[0].src.large;if(!u)return null;const b=await(await fetch(u)).blob();return PC[q]=await new Promise(r=>{const f=new FileReader();f.onload=()=>r(f.result);f.readAsDataURL(b)})}
-async function applyKW(){const R=(D.kw||[]).filter(r=>r.w.trim());if(!R.length)return alert('Keyword rule ekak add karanna.');if(!D.subs.length)return alert('Palamuwa subtitles generate karanna.');
+async function applyKW(){const R=(D.kw||[]).filter(r=>r.w.trim());if(!R.length)return alert('Add a keyword rule first.');if(!D.subs.length)return alert('Generate subtitles first.');
  sfInit();D.ovs=D.ovs.filter(o=>!o.kw);let n=0;const miss=[];
  for(const g of D.subs){const ws=g.t.split(/\s+/).filter(Boolean);for(let i=0;i<ws.length;i++){const cw=ws[i].toLowerCase().replace(/[.,!?"'…]/g,'');for(const r of R){if(!cw.includes(r.w.trim().toLowerCase()))continue;
   const k=KT[r.t],t=g.s+i/ws.length*(g.e-g.s),o={kw:1,s:t,e:t+(r.du||1.5),x:r.x??k[2],y:r.y??k[3],anim:r.an,snd:r.sn};
@@ -577,10 +577,10 @@ const PRE=[
 ['Comic',{font:'Bangers',size:7,color:'#ffffff',hc:'#ff3b3b',kar:'current',bg:'none',sw:8,sc:'#111111',anim:'pop',up:'on',ls:1}],
 ['Gold',{size:6,wt:'900',color:'#ffd54a',bg:'none',sw:6,sc:'#4a2c00',shd:8,anim:'zoom'}],
 ['Lyrics',{size:5.5,color:'#9ca3af',hc:'#ffffff',kar:'fill',bg:'none',shd:10,pos:'middle',anim:'fade'}]];
-$('#t-style').insertAdjacentHTML('afterbegin','<div class="p"><h3>✨ Caption presets</h3><div class="pg" id="pre"></div><button id="pl1" style="width:100%;margin-top:6px">▶ Line ekak play karala balanna</button></div>');
+$('#t-style').insertAdjacentHTML('afterbegin','<div class="p"><h3>✨ Caption presets</h3><div class="pg" id="pre"></div><button id="pl1" style="width:100%;margin-top:6px">▶ Preview line</button></div>');
 $('#pre').innerHTML=PRE.map(([n,p],i)=>{const q={...SDEF,...p};return `<button data-i="${i}" style="background:${q.bg=='box'?rgba(q.bgc,q.bga):'#1c1b33'};color:${q.color};font-weight:800;${q.sw>0?`-webkit-text-stroke:${q.sw/6}px ${q.sc};`:''}text-shadow:${q.shd>0?`0 0 ${q.shd/2}px ${q.shc}`:'none'}">අ Aa<br><small style="color:#c9c8e8;-webkit-text-stroke:0;text-shadow:none;font-weight:400;font-size:11px">${n}</small></button>`}).join('');
 function prevCue(){const g=D.subs.find(g=>T>=g.s&&T<=g.e)||D.subs[0];if(!g)return;pause();seek(g.s+(g.e-g.s)*.7)}
-function playLine(){const g=D.subs.find(g=>T>=g.s&&T<=g.e)||D.subs[0];if(!g)return alert('Palamuwa subtitles generate karanna.');seek(Math.max(0,g.s-.3));play();const id=setInterval(()=>{if(T>g.e+.4||!playing){pause();clearInterval(id)}},80)}
+function playLine(){const g=D.subs.find(g=>T>=g.s&&T<=g.e)||D.subs[0];if(!g)return alert('Generate subtitles first.');seek(Math.max(0,g.s-.3));play();const id=setInterval(()=>{if(T>g.e+.4||!playing){pause();clearInterval(id)}},80)}
 function applyPre(i){D.S={...SDEF,...PRE[i][1],px:D.S.px||0,py:D.S.py||0,efont:PRE[i][1].efont||D.S.efont||''};loadFont(D.S.font);gs();commit();prevCue()}
 $('#pre').onclick=e=>{const b=e.target.closest('button');if(b)applyPre(+b.dataset.i)};$('#pl1').onclick=playLine;
 // own fonts: saved in this browser (IndexedDB), so they stay after reload
@@ -698,7 +698,7 @@ gs=function(){$('#ga').innerHTML=FR(D,[['Aspect','ar','s',['Auto','16:9','9:16',
  [pm,pa,pg,pf].forEach(x=>te.prepend(x));
  $('#rall').onclick=()=>{D.subs.forEach(g=>['font','size','color','hc','anim'].forEach(k=>delete g[k]));insp();commit()}}
 // presets
-PRE.length=0;PRE.push(
+window.PRE0=window.PRE0||PRE.slice();PRE.length=0;PRE.push(
 ['Hormozi Pro',{font:'Noto Sans Sinhala|900',efont:'Montserrat',size:6.5,wt:'900',color:'#ffffff',hc:'#ffe600',kar:'current',bg:'none',sw:7,shd:6,anim:'words',up:'on',ad:.3}],
 ['Orange Block',{font:'Noto Sans Sinhala|900',efont:'Montserrat',size:6,wt:'900',color:'#ffffff',hc:'#111111',hbg:'#fbbf24',kar:'box',bg:'none',shd:8,anim:'pop',up:'on',ls:1}],
 ['Emerald Block',{font:'Noto Sans Sinhala|800',efont:'Poppins',size:5.8,wt:'800',color:'#ffffff',hc:'#ffffff',hbg:'#10b981',kar:'box',bg:'none',shd:8,anim:'pop'}],
@@ -850,4 +850,44 @@ $('#fa1').style.display=FF=='english'?'none':'';$('#fa2').style.display=FF=='sin
 document.addEventListener('click',e=>{const o=e.target.closest('#fa1 [data-o],#fa2 [data-o]');if(o){DDO=DDO==o.dataset.o?'':o.dataset.o;rf();return}const b=e.target.closest('#fa1 [data-f],#fa2 [data-f]');if(!b)return;const n=b.dataset.f;if(b.closest('#fa1'))D.S.font=n;else D.S.efont=n;DDO='';loadFont(n);gs();commit();try{prevCue()}catch{}});
 const sv0=D.S.font;if(D.S.font=='Noto Sans Sinhala|700')D.S.font='Noto Sans Sinhala|800';gs()}
 gs();
+
+// ---------- v7: saved keys, AI keyword detect, curated presets, pro polish
+PK.cash=[.7,t=>(Math.sin(6.28*(t<.1?1568:2093)*t)*Math.exp(-t*7)+(Math.random()*2-1)*Math.exp(-t*60)*.5)*.45];
+PK.hit=[.35,(t,u)=>(Math.sin(6.28*(120-80*u)*t)*Math.exp(-t*14)+(Math.random()*2-1)*Math.exp(-t*50)*.6)*.9];
+(function(){const want=[['Red Orange','Red Orange'],['Orange Block','Orange Block'],['Gold Glow','Gold i'],['Block Yellow','Block i'],['Clean Super','One Clean iii'],['Cursive Green','Cursive i'],['Green High','Green High'],['Silver Red','Silver Red']];
+const out=[['None',{size:5.5,wt:'700',color:'#ffffff',bg:'none',sw:0,shd:0}]];
+want.forEach(([a,b])=>{const f=(window.PRE0||[]).find(x=>x[0]==a);if(f)out.push([b,f[1]])});
+if(out.length>1){PRE.length=0;PRE.push(...out)}rpre()})();
+// keys: autosave + manager
+[['#key',()=>KEY[$('#eng').value]],['#uk',()=>'kg'],['#kv',()=>'kg'],['#pk2',()=>'kp']].forEach(([id,k])=>{const el=$(id);if(!el)return;const kk=k();if(kk&&LS.get(kk)&&!el.value)el.value=LS.get(kk);el.addEventListener('input',()=>{const v=el.value.trim(),kk=k();if(kk&&v)LS.set(kk,v)})});
+(function(){const v=$('#v-key');if(!v)return;const R=[['kg','Google Gemini','gem'],['ko','OpenAI (Whisper)','oai'],['kp','Pexels (photos)','px']];
+v.insertAdjacentHTML('beforeend','<div class="ct" id="kmg" style="margin-top:16px"><b>Saved keys</b><small style="display:block;margin:4px 0 10px">Stored in this browser only. Edit, test or delete anytime.</small>'+R.map(r=>`<div class="f" style="margin-bottom:10px"><span>${r[1]}</span><div class="key"><input type="password" data-k="${r[0]}" value="${esc(LS.get(r[0]))}" placeholder="Not set"><button data-a="eye" title="Show / hide">👁</button><button data-a="test" data-e="${r[2]}">Test</button><button data-a="del">🗑</button></div><small data-m="${r[0]}"></small></div>`).join('')+'</div>');
+const kmg=$('#kmg');kmg.oninput=e=>{if(e.target.dataset.k)LS.set(e.target.dataset.k,e.target.value.trim())};
+kmg.onclick=async e=>{const b=e.target.closest('button[data-a]');if(!b)return;const w=b.parentNode,i=w.querySelector('input'),m=kmg.querySelector(`[data-m="${i.dataset.k}"]`);
+if(b.dataset.a=='eye')i.type=i.type=='password'?'text':'password';
+else if(b.dataset.a=='del'){if(confirm('Delete this key from this browser?')){i.value='';LS.set(i.dataset.k,'');m.textContent='Deleted.'}}
+else{const k=i.value.trim();if(!k){m.textContent='Enter a key first.';return}m.style.color='#6b6a8a';m.textContent='Testing…';let r;
+if(b.dataset.e=='px'){try{const x=await fetch('https://api.pexels.com/v1/search?per_page=1&query=test',{headers:{Authorization:k}});r=x.ok?{c:'#059669',t:'✅ Key is valid.'}:{c:'#dc2626',t:'❌ Key rejected ('+x.status+').'}}catch{r={c:'#d97706',t:'⚠️ Could not reach Pexels.'}}}else r=await gKeyTest(b.dataset.e,k);
+m.style.color=r.c;m.textContent=r.t;if(r.c=='#059669')LS.set(i.dataset.k,k)}}})();
+// AI keyword detect
+const SNDS=['whoosh','ding','cash','pop','hit'];
+async function aiKW(){if(!D.subs||!D.subs.length)return alert('Generate subtitles first.');const key=LS.get('kg');if(!key)return alert('Add your Google AI key under 🔑 Keys first.');
+const b=$('#aik'),old=b.textContent;b.disabled=true;b.textContent='Analyzing…';
+try{const dur=Math.max(30,D.subs[D.subs.length-1].e),max=Math.min(40,Math.max(3,Math.round(dur/60*6))),px=!!LS.get('kp'),types=['line','popup','wow','num','cta','shape'].concat(px?['photo']:[]);
+const tx=D.subs.map(g=>g.t).join('\n'),words=new Set(tx.toLowerCase().split(/\s+/).map(w=>w.replace(/[.,!?"'…]/g,'')));
+const p=`You are a video editor. From this transcript (Sinhala / Singlish / English mix) pick up to ${max} moments worth an overlay plus a sound effect. Return ONLY a JSON array of objects {"w","t","v","sn"}.
+"w": ONE word copied exactly as written in the transcript. "t": one of ${types.join(', ')}. "v": for line use one of [${Object.keys(ICN).join(', ')}]; for photo a 1-3 word English search; for others a short text (max 12 chars). "sn": one of ${SNDS.join(', ')} (cash=money, ding=highlight, whoosh=transition, pop=small emphasis, hit=impact). No two items on the same word.
+Transcript:
+${tx}`;
+const m=$('#mdl').value.trim()||'gemini-flash-latest',r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${encodeURIComponent(key)}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:p}]}],generationConfig:{responseMimeType:'application/json',temperature:.3}})}),j=await r.json();
+if(!r.ok)throw Error((j.error&&j.error.message)||'AI request failed ('+r.status+')');
+let a=JSON.parse(j.candidates[0].content.parts[0].text.replace(/```json|```/g,'').trim());if(!Array.isArray(a))a=[];const seen={};
+a=a.filter(x=>x&&x.w&&types.includes(x.t)&&words.has(String(x.w).toLowerCase().replace(/[.,!?"'…]/g,''))&&!seen[x.w.toLowerCase()]&&(seen[x.w.toLowerCase()]=1)&&(x.t!='line'||ICN[x.v])).slice(0,max);
+D.kw=(D.kw||[]).filter(r=>!r.ai).concat(a.map(x=>({w:String(x.w).toLowerCase(),t:x.t,v:x.v||KT[x.t][4],an:'pop',sn:SNDS.includes(x.sn)?x.sn:'pop',du:1.5,ai:1})));
+rkw();commit();alert(a.length+' suggestions added. Edit or delete any of them, then press ⚡ Apply to video.')}
+catch(e){alert('AI detect failed: '+e.message)}b.disabled=false;b.textContent=old}
+document.querySelector('#t-kw .row').insertAdjacentHTML('afterbegin','<button class="g2" id="aik">🤖 AI Auto-detect</button>');$('#aik').onclick=aiKW;
+// pro polish
+if(!LS.get('th'))thS(true);
+document.head.insertAdjacentHTML('beforeend','<style>#ed .p,.card{border-radius:14px}button{transition:transform .12s,background .15s}button:active{transform:scale(.97)}#aik{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;border:0;font-weight:700}input:focus,select:focus{outline:2px solid #7c3aed55;outline-offset:1px}.kr2{border:1px solid var(--bd,#2f3366)}</style>');
 </script></body></html>

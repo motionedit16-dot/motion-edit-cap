@@ -885,7 +885,7 @@ let a=JSON.parse(j.candidates[0].content.parts[0].text.replace(/```json|```/g,''
 a=a.filter(x=>x&&x.w&&types.includes(x.t)&&words.has(String(x.w).toLowerCase().replace(/[.,!?"'…]/g,''))&&!seen[x.w.toLowerCase()]&&(seen[x.w.toLowerCase()]=1)&&(x.t!='line'||ICN[x.v])).slice(0,max);
 D.kw=(D.kw||[]).filter(r=>!r.ai).concat(a.map(x=>({w:String(x.w).toLowerCase(),t:x.t,v:x.v||KT[x.t][4],an:'pop',sn:SNDS.includes(x.sn)?x.sn:'pop',du:1.5,ai:1})));
 rkw();commit();alert(a.length+' suggestions added. Edit or delete any of them, then press ⚡ Apply to video.')}
-catch(e){alert('AI detect failed: '+e.message)}b.disabled=false;b.textContent=old}
+catch(e){const n=localKW();alert(n?'Gemini limit reached, so a built-in keyword scan was used instead: '+n+' suggestions added. Edit or delete any, then press ⚡ Apply to video.':'AI detect failed: '+e.message)}b.disabled=false;b.textContent=old}
 document.querySelector('#t-kw .row').insertAdjacentHTML('afterbegin','<button class="g2" id="aik">🤖 AI Auto-detect</button>');$('#aik').onclick=aiKW;
 // pro polish
 if(!LS.get('th'))thS(true);
@@ -964,4 +964,35 @@ rpre();$('#pl1').insertAdjacentHTML('beforebegin','<label style="display:flex;ga
 $('#gl').oninput=e=>{D.S.shd=+e.target.value;if(!D.S.shc||D.S.shc=='#000000')D.S.shc=D.S.color;gs()};$('#gl').onchange=()=>commit()})();
 // glass UI
 document.head.insertAdjacentHTML('beforeend','<style>html.dk #ed{--bg:#0a0b18}html.dk #rail{background:rgba(24,26,51,.7);backdrop-filter:blur(14px)}html.dk #ed .p{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)}.rb.on{background:linear-gradient(135deg,#7c3aed66,#2563eb66)!important}#pre button:hover{outline:2px solid #7c3aed;transform:translateY(-1px)}#cm div:hover{background:#7c3aed55}canvas#c{cursor:default}</style>');
+
+// ---------- v9: Gemini limit protection (retry, model fallback, backup keys, offline keyword scan)
+(function(){const _f=window.fetch;
+const toast=t=>{let d=$('#gtoast');if(!d){document.body.insertAdjacentHTML('beforeend','<div id="gtoast" style="position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:99;padding:8px 14px;border-radius:12px;background:rgba(24,26,51,.94);color:#f1f2ff;font:13px system-ui;border:1px solid #3b3f7a;display:none"></div>');d=$('#gtoast')}d.textContent=t;d.style.display=t?'block':'none';if(t){clearTimeout(d._t);d._t=setTimeout(()=>d.style.display='none',6000)}};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+window.fetch=async function(u,o){const url=typeof u=='string'?u:(u&&u.url)||'';
+ if(!/generativelanguage\.googleapis\.com\/v1beta\/models\/[^:]+:generateContent/.test(url)||(o&&o.body&&typeof o.body!='string'))return _f.apply(this,arguments);
+ const cur=(url.match(/models\/([^:]+):/)||[])[1],main=(url.match(/[?&]key=([^&]+)/)||[])[1]||(LS.get('kg')||''),
+ keys=[...new Set([decodeURIComponent(main),...(LS.get('kg2')||'').split(/[\s,;]+/)].filter(Boolean))],
+ models=[...new Set([cur,'gemini-flash-latest','gemini-flash-lite-latest','gemini-2.5-flash','gemini-2.5-flash-lite'])];
+ let last=null,tries=0;
+ for(const k of keys)for(const m of models){
+  for(let a=0;a<2;a++){if(++tries>14)return last||_f.call(this,u,o);
+   const nu=url.replace(/models\/[^:]+:/,'models/'+m+':').replace(/([?&])key=[^&]*/,'$1key='+encodeURIComponent(k));
+   let r;try{r=await _f.call(this,nu,o)}catch(e){await sleep(1500);continue}
+   if(r.ok)return r;last=r;
+   if(r.status==429||r.status==503||r.status==500){const t=await r.clone().text(),daily=/PerDay|per day/i.test(t);
+    if(r.status==429&&daily)break;
+    const w=Math.min(25,+((t.match(/retry in ([\d.]+)s/i)||t.match(/"retryDelay":\s*"(\d+)/)||[])[1])||3);
+    if(a==0){toast('Gemini busy, retrying in '+Math.ceil(w)+'s…');await sleep(w*1000);continue}
+    break}
+   break}
+  toast('Gemini limit, switching to backup ('+m+')…')}
+ return last||_f.call(this,u,o)};
+$('#kmg')&&$('#kmg').insertAdjacentHTML('beforeend','<div class="f" style="margin-top:6px"><span>Backup Gemini keys (optional)</span><textarea id="kg2" rows="2" placeholder="One key per line. Used automatically when the main key hits its limit." style="width:100%;border-radius:10px;padding:8px;background:transparent;color:inherit;border:1px solid var(--bd,#2f3366)">'+esc(LS.get('kg2')||'')+'</textarea></div>');
+$('#kg2')&&($('#kg2').oninput=e=>LS.set('kg2',e.target.value))})();
+// offline keyword scan (no AI needed)
+function localKW(){if(!D.subs||!D.subs.length)return 0;
+ const L=[[['money','cash','salary','income','profit','සල්ලි','මුදල්'],'popup','💰','cash'],[['sale','offer','discount','price','deal'],'popup','OFFER','cash'],[['free','නොමිලේ'],'popup','FREE','pop'],[['new','අලුත්'],'popup','NEW','sparkle'],[['wow','amazing','super','best','සුපිරි'],'wow','WOW!','ding'],[['important','warning','careful','වැදගත්'],'popup','⚠️','hit'],[['fast','speed','quick'],'popup','⚡','whoosh'],[['subscribe','follow','like','share'],'cta','SUBSCRIBE','ding'],[['love','heart','ආදරය'],'popup','❤️','pop'],[['win','winner','success','ජය'],'popup','🏆','success']];
+ const seen={},out=[];D.subs.forEach(g=>g.t.split(/\s+/).forEach(w=>{const c=w.toLowerCase().replace(/[.,!?"'…]/g,'');if(!c||seen[c])return;for(const[ks,t,v,sn]of L)if(ks.includes(c)){seen[c]=1;out.push({w:c,t,v,an:'pop',sn:PK[sn]?sn:'pop',du:1.5,ai:1});break}}));
+ D.kw=(D.kw||[]).filter(r=>!r.ai).concat(out.slice(0,40));rkw();commit();return out.length}
 </script></body></html>
